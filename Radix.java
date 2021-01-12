@@ -1,7 +1,7 @@
 public class Radix{
   public static int nth(int n, int col){
     int digit;
-    digit = n / (10^col);
+    digit = n / (int)(Math.pow(10, col));
     digit = digit%10;
 
     return digit;
