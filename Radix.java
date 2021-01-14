@@ -23,6 +23,35 @@ public class Radix{
     }
   }
 
+  public static void radixSortSimple(SortableLinkedList data){
+    SortableLinkedList[] buckets = new SortableLinkedList[10];
+    int passes = 1;
+
+    for (int i=0; i<10; i++){
+      buckets[i] = new SortableLinkedList();
+    }
+
+    for (int i = 0; i<passes; i++){
+
+      for (int j=0; j<data.size(); j++){
+        int curr = data.remove(j);
+
+        if (i==0){
+          if (passes < length(curr)){
+            passes = length(curr);
+          }
+        }
+
+        int digit = nth(j, curr);
+        buckets[digit].add(curr);
+
+      }
+
+      merge(data, buckets);
+
+    }
+  }
+
   public static void main(String[] args){
     System.out.println("TESTING NTH");
     System.out.println();
