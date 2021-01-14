@@ -8,7 +8,13 @@ public class Radix{
   }
 
   public static int length(int n){
-    return -1;
+    int num_digits;
+    if (n==0){
+      num_digits = 1;
+    }else{
+      num_digits = (int)Math.floor(Math.log10(Math.abs(n)))+1;
+    }
+    return num_digits;
   }
 
   public static void merge(MyLinkedList original, MyLinkedList[] buckets){
