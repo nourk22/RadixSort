@@ -67,7 +67,6 @@ public class Radix{
     radixSortSimple(pos);
     radixSortSimple(neg);
 
-
     neg.extend(pos);
     data.extend(neg);
 
